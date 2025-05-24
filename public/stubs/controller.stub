@@ -1,0 +1,24 @@
+<?php namespace {{namespace}};
+
+use App\Base\CrudBaseController;
+use Illuminate\Http\Request;
+use DataTables;
+use App\Repositories\Eloquent{{modelName}}Repository;
+use App\Transformers\{{modelName}}Resource;
+use App\Entities\{{modelName}};
+use App\Http\Requests\{{modelName}}Validator;
+
+class {{modelName}}Controller extends CrudBaseController {
+
+    protected static $repoFile = Eloquent{{modelName}}Repository::class;
+    protected static $modelFile = {{modelName}}::class;
+    protected static $moduleName = '{{modelName}}';
+    protected static $resourceFile = {{modelName}}Resource::class;
+    protected static $validatorFile = {{modelName}}Validator::class;
+    protected static $indexURL = {{indexURL}};
+    protected static $uploadFolder = '{{uploadFolder}}';
+
+    public function withViewData(){
+        return [];
+    } 
+}
